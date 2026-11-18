@@ -17,3 +17,8 @@ jobs:
 
       - name: Run app.js
         run: node app.js
+      
+      - name: Test encrypted secret
+        env:
+          API_KEY: ${{ secrets.MY_API_KEY }}
+        run: echo "Loaded secret: $API_KEY"
